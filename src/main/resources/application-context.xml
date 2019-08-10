@@ -17,6 +17,10 @@
 
     <bean id="dateBean" class="pl.sda.spring.bean.LocalDateBean" factory-method="now"/>
 
+    <bean id="pizza" class="pl.sda.spring.factoryMethod.Pizza" factory-method="getInstance"/>
+    <bean id="pizzaFactory" class="pl.sda.spring.factory.PizzaFactory"/>
+    <bean id="otherPizza" class="pl.sda.spring.factory.OtherPizza" factory-bean="pizzaFactory"/>
+
     <bean id="beanWithList" class="pl.sda.spring.bean.BeanWithList">
         <property name="list">
             <list value-type="java.lang.Integer">

@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pl.sda.spring.bean.*;
+import pl.sda.spring.factoryMethod.Pizza;
 
 public class Main {
     public static void main(String[] args) {
@@ -42,14 +43,16 @@ public class Main {
 //        BeanWithList beanWithList = context.getBean("beanWithList", BeanWithList.class);
 //        System.out.println(beanWithList);
 
-        SomeBean justBean = context.getBean("justBean", SomeBean.class);
-        System.out.println(justBean);
+//        SomeBean justBean = context.getBean("justBean", SomeBean.class);
+//        System.out.println(justBean);
+//
+//        SomeBean cBean = context.getBean("cBean", SomeBean.class);
+//        System.out.println(cBean);
+//
+//        LocalDateBean dateBean = context.getBean("dateBean", LocalDateBean.class);
+//        System.out.println(dateBean);
 
-        SomeBean cBean = context.getBean("cBean", SomeBean.class);
-        System.out.println(cBean);
-
-        LocalDateBean dateBean = context.getBean("dateBean", LocalDateBean.class);
-        System.out.println(dateBean);
+        Pizza pizza = context.getBean("pizza", Pizza.class);
 
     }
 }
