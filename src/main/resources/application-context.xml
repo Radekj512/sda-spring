@@ -5,51 +5,5 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="someBean"  class="pl.sda.spring.bean.SomeBean" scope="prototype">
-        <property name="name" value="text"/>
-    </bean>
-
-    <bean id="someBean3" class="pl.sda.spring.bean.SomeBean3">
-        <constructor-arg ref="someBean"/>
-    </bean>
-    <bean id="justBean" class="pl.sda.spring.bean.SomeBean" p:name="przez p namespace"/>
-    <bean id="cBean" class="pl.sda.spring.bean.SomeBean" c:name="przez c namespace"/>
-
-    <bean id="dateBean" class="pl.sda.spring.bean.LocalDateBean" factory-method="now"/>
-
-    <bean id="pizza" class="pl.sda.spring.factoryMethod.Pizza" factory-method="getInstance"/>
-    <bean id="pizzaFactory" class="pl.sda.spring.factory.PizzaFactory"/>
-    <bean id="otherPizza" class="pl.sda.spring.factory.OtherPizza" factory-bean="pizzaFactory"/>
-
-    <bean id="beanWithList" class="pl.sda.spring.bean.BeanWithList">
-        <property name="list">
-            <list value-type="java.lang.Integer">
-                <value>1</value>
-                <value>2</value>
-                <value>3</value>
-            </list>
-        </property>
-    </bean>
-
-<!--    <bean id="someBean2" class="pl.sda.spring.bean.SomeBean">-->
-<!--        <constructor-arg name="name" value="drugi bean"/>-->
-<!--    </bean>-->
-
-<!--    <bean id="someBean3" class="pl.sda.spring.bean.SomeBean">-->
-<!--        <constructor-arg index="0" value="SomeBean3"/>-->
-<!--    </bean>-->
-
-<!--    <bean id="newBean1" class="pl.sda.spring.bean.SomeBean2">-->
-<!--        <property name="name" value="name"/>-->
-<!--        <property name="number" value="1"/>-->
-<!--    </bean>-->
-<!--    <bean id="newBean2" class="pl.sda.spring.bean.SomeBean2">-->
-<!--        <constructor-arg name="name" value="name"/>-->
-<!--        <constructor-arg name="number" value="2"/>-->
-<!--    </bean>-->
-<!--    <bean id="newBean3" class="pl.sda.spring.bean.SomeBean2">-->
-<!--        <constructor-arg index="0" value="Name"/>-->
-<!--        <constructor-arg index="1" value="3"/>-->
-<!--    </bean>-->
 
 </beans>
