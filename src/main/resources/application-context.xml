@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <bean id="someBean"  class="pl.sda.spring.bean.SomeBean" scope="prototype">
@@ -10,6 +12,10 @@
     <bean id="someBean3" class="pl.sda.spring.bean.SomeBean3">
         <constructor-arg ref="someBean"/>
     </bean>
+    <bean id="justBean" class="pl.sda.spring.bean.SomeBean" p:name="przez p namespace"/>
+    <bean id="cBean" class="pl.sda.spring.bean.SomeBean" c:name="przez c namespace"/>
+
+    <bean id="dateBean" class="pl.sda.spring.bean.LocalDateBean" factory-method="now"/>
 
     <bean id="beanWithList" class="pl.sda.spring.bean.BeanWithList">
         <property name="list">

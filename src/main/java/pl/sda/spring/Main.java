@@ -3,10 +3,7 @@ package pl.sda.spring;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import pl.sda.spring.bean.BeanWithList;
-import pl.sda.spring.bean.SomeBean;
-import pl.sda.spring.bean.SomeBean2;
-import pl.sda.spring.bean.SomeBean3;
+import pl.sda.spring.bean.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -41,9 +38,18 @@ public class Main {
 //        System.out.println(someBean1);
 //        System.out.println(someBean2);
 //        System.out.println(someBean3);
+//
+//        BeanWithList beanWithList = context.getBean("beanWithList", BeanWithList.class);
+//        System.out.println(beanWithList);
 
-        BeanWithList beanWithList = context.getBean("beanWithList", BeanWithList.class);
-        System.out.println(beanWithList);
+        SomeBean justBean = context.getBean("justBean", SomeBean.class);
+        System.out.println(justBean);
+
+        SomeBean cBean = context.getBean("cBean", SomeBean.class);
+        System.out.println(cBean);
+
+        LocalDateBean dateBean = context.getBean("dateBean", LocalDateBean.class);
+        System.out.println(dateBean);
 
     }
 }

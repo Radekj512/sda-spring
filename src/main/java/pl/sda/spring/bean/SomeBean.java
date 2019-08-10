@@ -3,7 +3,7 @@ package pl.sda.spring.bean;
 
 import lombok.ToString;
 
-
+@ToString
 public class SomeBean {
     private String name;
 
