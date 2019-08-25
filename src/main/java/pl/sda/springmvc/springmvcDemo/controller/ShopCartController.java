@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import pl.sda.springmvc.springmvcDemo.component.ShoppingCart;
 import pl.sda.springmvc.springmvcDemo.exception.NotFoundProductException;
+import pl.sda.springmvc.springmvcDemo.exception.NotFoundUserException;
+
+import java.security.Principal;
 
 @Controller
 public class ShopCartController {
@@ -32,8 +35,8 @@ public class ShopCartController {
     }
 
     @PostMapping("/cart/placeorder")
-    public ModelAndView addToCart() throws NotFoundProductException {
-        shoppingCart.placeOrder();
+    public ModelAndView placeOrder(Principal principal) throws NotFoundProductException, NotFoundUserException {
+        shoppingCart.placeOrder(principal.getName());
         return new ModelAndView("redirect:/cart");
     }
 }

@@ -6,5 +6,6 @@ import pl.sda.springmvc.springmvcDemo.repository.UserRepository;
 
 public interface UserService {
   UserEntity findUser(String username);
+  void addUser(UserEntity userEntity);
 
 }

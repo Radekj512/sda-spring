@@ -20,7 +20,7 @@
         <label>Password</label>
         <input th:type="password" th:field="*{password}" />
         <br />
-        <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Price Error</div>
+        <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Login Error</div>
         <button th:type="submit">Login</button>
     </form>
     </div>

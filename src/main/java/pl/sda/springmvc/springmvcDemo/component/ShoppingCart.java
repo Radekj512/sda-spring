@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import pl.sda.springmvc.springmvcDemo.dto.ProductDTO;
 import pl.sda.springmvc.springmvcDemo.exception.NotFoundProductException;
+import pl.sda.springmvc.springmvcDemo.exception.NotFoundUserException;
 import pl.sda.springmvc.springmvcDemo.service.OrderService;
 import pl.sda.springmvc.springmvcDemo.service.ProductService;
 
@@ -39,10 +40,10 @@ public class ShoppingCart {
         productList.add(productById);
     }
 
-    public void placeOrder(){
+    public void placeOrder(String name) throws NotFoundUserException {
         List<Long> ids = new ArrayList<>();
         productList.forEach(x->ids.add(x.getId()));
-        orderService.placeOrder(ids);
+        orderService.placeOrder(ids, name);
         productList.clear();
     }
 

@@ -21,8 +21,11 @@ public class OrderEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime creationTime = LocalDateTime.now();
-    @ManyToMany(mappedBy = "orders")
+    @ManyToMany(mappedBy = "orders", fetch = FetchType.LAZY)
     private List<ProductEntity> products = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private UserEntity user;
 
 
  }
